@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpyEmuCore", "SpyEmuCore\Sp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogLib", "LogLib\LogLib.csproj", "{D20AE664-F46F-406B-AB16-3FA9CC9C41EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowView", "WindowView\WindowView.csproj", "{7382E5E0-0B13-4177-B3BD-5C5B6537C209}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{D20AE664-F46F-406B-AB16-3FA9CC9C41EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D20AE664-F46F-406B-AB16-3FA9CC9C41EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D20AE664-F46F-406B-AB16-3FA9CC9C41EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7382E5E0-0B13-4177-B3BD-5C5B6537C209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7382E5E0-0B13-4177-B3BD-5C5B6537C209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7382E5E0-0B13-4177-B3BD-5C5B6537C209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7382E5E0-0B13-4177-B3BD-5C5B6537C209}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -30,6 +30,12 @@ namespace SpyEmuCore
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern IntPtr GetDesktopWindow();
+
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint processId);
+
         /// <summary>ウインドウクラス名取得</summary>
         /// <param name="hWnd">ウインドウハンドル</param>
         /// <returns>クラス名</returns>
@@ -46,6 +52,16 @@ namespace SpyEmuCore
             {
                 return string.Empty;
             }
+        }
+
+        /// <summary>ウインドウハンドルからプロセスを取得</summary>
+        /// <param name="hWnd">ウインドウハンドル</param>
+        /// <returns>プロセス</returns>
+        public static Process GetWindowThreadProcess(IntPtr hWnd)
+        {
+            GetWindowThreadProcessId(hWnd, out uint pid);
+
+            return Process.GetProcessById((int)pid);
         }
 
         /// <summary>Spy++ログファイルからプロセス、クラスパスを取得</summary>
