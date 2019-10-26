@@ -2,6 +2,12 @@
 # SpyEmu
 Spy++で取得したログファイルから動作をシミュレートする。
 
+Spy++ 場所
+
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\spyxx.exe
+
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\spyxx_amd64.exe
+
 # 1. ログの取得
 以下のようにSpy++を用いてログを表示、保存をする。
 ![](https://i.imgur.com/2CY3v8x.gif)
@@ -25,3 +31,7 @@ Spy++で取得したログファイルから動作をシミュレートする。
 2. にて編集したログをSpyEmuの引数に指定することで動作をシミュレートすることができる。
 ![](https://i.imgur.com/hMCaykp.gif)
 
+# WindowView
+Spy++ログの1行目に指定するウインドウクラスパス一覧(全プロセス)を取得するソフト。
+Spy++でログを出した後にこのソフトでウインドウクラスパスを探して、ログファイルの1行目に記載する用で使う。
+![](https://i.imgur.com/lRSqzmC.gif)
