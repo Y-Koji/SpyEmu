@@ -10,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpyEmuCore", "SpyEmuCore\SpyEmuCore.csproj", "{F8D64A25-C752-449D-BA41-73418EBDDA07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogLib", "LogLib\LogLib.csproj", "{D20AE664-F46F-406B-AB16-3FA9CC9C41EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +24,14 @@ Global
 		{B2FEEBF3-E889-4DDA-A3CD-B5CC1687F165}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2FEEBF3-E889-4DDA-A3CD-B5CC1687F165}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2FEEBF3-E889-4DDA-A3CD-B5CC1687F165}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8D64A25-C752-449D-BA41-73418EBDDA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D64A25-C752-449D-BA41-73418EBDDA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D64A25-C752-449D-BA41-73418EBDDA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D64A25-C752-449D-BA41-73418EBDDA07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D20AE664-F46F-406B-AB16-3FA9CC9C41EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D20AE664-F46F-406B-AB16-3FA9CC9C41EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D20AE664-F46F-406B-AB16-3FA9CC9C41EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D20AE664-F46F-406B-AB16-3FA9CC9C41EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

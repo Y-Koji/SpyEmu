@@ -1,8 +1,9 @@
-﻿using System;
+﻿using LogLib;
+using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace SpyEmu
+namespace SpyEmuCore
 {
     public class SpyLog
     {

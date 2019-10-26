@@ -8,8 +8,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace SpyEmu
+namespace SpyEmuCore
 {
+
     public static class Spy
     {
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -70,7 +71,7 @@ namespace SpyEmu
         public static IEnumerable<SpyLog> GetLog(string fileName)
         {
             return
-                from x in 
+                from x in
                     from x in File.ReadAllLines(fileName)
                     where !string.IsNullOrWhiteSpace(x)
                     where SpyLog.IsMatch(x)
@@ -110,7 +111,7 @@ namespace SpyEmu
                     indexer[className]++;
                 }
                 string classNameWithIndex = className + "[" + indexer[className] + "]";
-                
+
                 yield return new Window
                 {
                     Path = path + classNameWithIndex,
@@ -134,7 +135,7 @@ namespace SpyEmu
         public static void PostLogs(IntPtr hWnd, IEnumerable<SpyLog> logs)
         {
             SpyLog[] logArray = logs.ToArray();
-            for (int i = 0;i < logArray.Length;i++)
+            for (int i = 0; i < logArray.Length; i++)
             {
                 SpyLog nowLog = logArray[i];
                 SpyLog beforeLog = 0 < i ? logArray[i - 1] : logArray[i];

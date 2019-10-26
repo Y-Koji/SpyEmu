@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using SpyEmuCore;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpyEmu
+namespace SpyEmuCore
 {
     // https://www.pinvoke.net/default.aspx/user32/GetWindow.html
     internal enum GetWindowType : uint
