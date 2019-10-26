@@ -101,7 +101,21 @@ namespace SpyEmuCore
         /// <param name="hWnd">親ウインドウハンドル</param>
         /// <returns>ウインドウ一覧情報</returns>
         public static IEnumerable<Window> FindChildWindows(IntPtr hWnd)
-            => FindWindows(GetWindow(hWnd, GetWindowType.GW_CHILD));
+        {
+            string className = GetClassName(hWnd);
+            string path = className + "[0]";
+            yield return new Window
+            {
+                hWnd = hWnd,
+                ClassName = className,
+                Path = path,
+            };
+
+            foreach (var window in FindWindows(GetWindow(hWnd, GetWindowType.GW_CHILD)))
+            {
+                yield return window;
+            }
+        }
 
         /// <summary>ウインドウ一覧情報取得</summary>
         /// <param name="hWnd">検索元ウインドウハンドル</param>
