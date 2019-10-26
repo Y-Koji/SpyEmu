@@ -70,11 +70,11 @@ namespace SpyEmu
         public static IEnumerable<SpyLog> GetLog(string fileName)
         {
             return
-                from x in (
+                from x in 
                     from x in File.ReadAllLines(fileName)
                     where !string.IsNullOrWhiteSpace(x)
                     where SpyLog.IsMatch(x)
-                    select SpyLog.Parse(x))
+                    select SpyLog.Parse(x)
                 where x.No != -1
                 orderby x.Time
                 select x;
@@ -142,7 +142,7 @@ namespace SpyEmu
 
                 Task.Delay((int)ts.TotalMilliseconds).Wait();
 
-                PostMessage(nowLog.hWnd, nowLog.nCode, nowLog.wParam, nowLog.lParam);
+                PostMessage(hWnd, nowLog.nCode, nowLog.wParam, nowLog.lParam);
 
                 Console.WriteLine(nowLog.ToString());
             }

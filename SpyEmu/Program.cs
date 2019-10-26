@@ -16,7 +16,7 @@ namespace SpyEmu
         {
             // テスト用にmeryのログを使用する。
             // 完成後はこの行を外す。
-            args = new string[] { @"C:\Users\PC user\Desktop\SpyLog\mery.log", };
+            args = new string[] { @"C:\Users\PC user\Desktop\SpyLog\me.log", };
 
             // シミュレート処理
             foreach (var arg in args)

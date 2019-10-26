@@ -13,6 +13,9 @@ namespace SpyEmu
             @"lParam:(?<lParam>\w+) " +
             @"time:(?<time>[\d:\.]+)";
         private static Regex LogRegex { get; } = new Regex(LOG_REGEX_PATTERN);
+        private static string TIME_REGEX_PATTERN { get; } =
+            @"(?<Hour>\d+):(?<Minute>\d+):(?<Second>\d+)\.(?<Millisecond>\d+)";
+        private static Regex TimeRegex { get; } = new Regex(TIME_REGEX_PATTERN);
 
         public int No { get; set; }
         public IntPtr hWnd { get; set; }
@@ -42,7 +45,27 @@ namespace SpyEmu
             string nCode = m.Groups["nCode"].Value;
             string wParam = m.Groups["wParam"].Value;
             string lParam = m.Groups["lParam"].Value;
-            string time = m.Groups["time"].Value;
+            string timeStr = m.Groups["time"].Value;
+
+            Match mTime = TimeRegex.Match(timeStr);
+            int year = 2000;
+            int month = 1;
+            int day = 1;
+            string hourStr = mTime.Groups["Hour"].Value.PadLeft(2, '0');
+            string minStr = mTime.Groups["Minute"].Value.PadLeft(2, '0');
+            string secStr = mTime.Groups["Second"].Value.PadLeft(2, '0');
+            string miliSecStr = mTime.Groups["Millisecond"].Value.PadLeft(3, '0');
+            int hms = int.Parse(hourStr + minStr + secStr + miliSecStr);
+            if (240000000 < hms)
+            {
+                day += 1;
+                hourStr = (int.Parse(hourStr) - 24).ToString().PadLeft(2, '0');
+            }
+            int hour = int.Parse(hourStr);
+            int min = int.Parse(minStr);
+            int sec = int.Parse(secStr);
+            int milisec = int.Parse(miliSecStr);
+            DateTime time = new DateTime(year, month, day, hour, min, sec, milisec);
 
             try
             {
@@ -54,7 +77,7 @@ namespace SpyEmu
                     nCodeStr = nCode,
                     wParam = ParseHexNumber(wParam),
                     lParam = ParseHexNumber(lParam),
-                    Time = DateTime.Parse(time),
+                    Time = time,
                 };
             }
             catch (Exception e)
